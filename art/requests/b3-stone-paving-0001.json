@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "id": "b3-stone-paving-0001",
+  "mode": "experimental",
+  "asset_type": "tileable_texture",
+  "description": "Original stylized fantasy stone paving texture with large readable hand-painted stone shapes, a stylized blue-gray palette, low photographic noise and an orthographic albedo appearance. Intended for repeating floor surfaces. No perspective, text or watermark.",
+  "roblox_usage": "Repeating floor surface in an original fantasy exploration game; flat albedo material only.",
+  "style": {
+    "kind": "preset",
+    "profile_id": "adventure-fantasy"
+  },
+  "prompt": {
+    "subject": "A seamless-looking square flat-lay albedo texture of original stylized fantasy stone paving.",
+    "details": [
+      "Large readable hand-painted stone slabs and irregular cobbles with confident simplified shapes",
+      "Stylized blue-gray palette with restrained warm grey and pale stone variation",
+      "Low photographic noise and a clean painterly surface with subtle brush and chisel marks",
+      "Orthographic top-down albedo appearance with flat even illumination, no cast shadows and no perspective",
+      "Stone pattern fills the frame edge to edge with no border, frame, text, logo or watermark",
+      "Mid-frequency wear follows stone edges and contact points rather than uniform photographic grain",
+      "Original ruined-waystation stonework culture, not a copy of an existing game or recognizable asset"
+    ],
+    "negative": "photographic noise, photorealistic gravel, perspective, horizon, cast shadows, objects, border, frame, text, letters, watermark, logo, recognizable game asset, copied composition"
+  },
+  "delivery": {
+    "width_px": 1024,
+    "height_px": 1024,
+    "format": "png",
+    "tiling_required": true
+  },
+  "generation": {
+    "workflow_version": "flux3-klein-v1",
+    "seed": 20261018
+  },
+  "output": {
+    "directory": "outputs/generated/b3-stone-paving-0001",
+    "workflow_path": "workflows/generated/b3-stone-paving-0001/workflow.json"
+  },
+  "quality": {
+    "b2_qa": true,
+    "postprocess": {
+      "seamless": "auto",
+      "optimize_png": "auto"
+    }
+  },
+  "notes": "Authorized single local experimental integration test. Not a game asset approval."
+}

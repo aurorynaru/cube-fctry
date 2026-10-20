@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "description": "Project-local record of Roblox cloud asset IDs. Entries are provenance records only; they are not B1 registry events or production approvals. An asset marked test_only_unapproved must never be referenced by production code.",
+  "assets": [
+    {
+      "source_path": "workflows/textures/b21/stone-seamless-v4-lossless-opt.png",
+      "sha256": "782b2c956c404622ea3e992edf9f906ddcb22422596a4f9ad9c501de14a1d33a",
+      "roblox_asset_id": "112705883084796",
+      "asset_type": "image",
+      "uploaded_by": "aurory_naru",
+      "uploaded_on": "2026-10-17",
+      "creator": {
+        "type": "user",
+        "id": 11822718311,
+        "name": "aurory_naru"
+      },
+      "experience": "local-unsaved",
+      "status": "test_only_unapproved",
+      "milestone": "C1B",
+      "notes": "C1B import/render experiment only. Persistent cloud asset; not B1-imported, not approved, and not for production use."
+    }
+  ]
+}

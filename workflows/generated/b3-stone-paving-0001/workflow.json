@@ -1,0 +1,101 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux3_image_klein_sd_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_int8_convrot.safetensors",
+      "type": "flux3",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "A seamless-looking square flat-lay albedo texture of original stylized fantasy stone paving. Large readable hand-painted stone slabs and irregular cobbles with confident simplified shapes. Stylized blue-gray palette with restrained warm grey and pale stone variation. Low photographic noise and a clean painterly surface with subtle brush and chisel marks. Orthographic top-down albedo appearance with flat even illumination, no cast shadows and no perspective. Stone pattern fills the frame edge to edge with no border, frame, text, logo or watermark. Mid-frequency wear follows stone edges and contact points rather than uniform photographic grain. Original ruined-waystation stonework culture, not a copy of an existing game or recognizable asset. Intended Roblox use: Repeating floor surface in an original fantasy exploration game; flat albedo material only. Style direction: Adventure Fantasy. Weathered stone, woven fiber and oxidized metal with restrained hand-shaped variation. Surface detail rule: Mid-frequency wear follows edges and contact points, never uniform noise. Palette anchored in deep teal (#314D50), warm stone grey (#887B69), pale sand (#D5B888), with teal (#80B8AA) and orange (#D69B5C) accents. Lighting and material response: Warm directional sun against cool ambient recesses; entrances and objectives retain contrast. Tiling requirement: an edge-to-edge repeating texture with no visible border, frame or vignette. Blend repeated stone with decals or modular breakup; test 3x3 and long sightlines. This is a flat albedo material texture, not a scene mockup or a perspective render. Originality: Create a new culture and insignia; avoid named fantasy universes, borrowed maps or recognizable quest icons. Avoid recognizable existing games, brands, characters, logos, watermarks, readable text and copied compositions.",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "photographic noise, photorealistic gravel, perspective, horizon, cast shadows, objects, border, frame, text, letters, watermark, logo, recognizable game asset, copied composition",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 20261018,
+      "steps": 16,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "denoise": 1.0
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "b3-b3-stone-paving-0001"
+    }
+  }
+}

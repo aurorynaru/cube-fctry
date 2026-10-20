@@ -1,0 +1,54 @@
+name: Publish to Roblox
+
+# `main` is for development (agents can commit freely).
+# Push or merge to `release` when the place should go live to players.
+on:
+  push:
+    branches: [release]
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: "Published (live to players) or Saved (version history only)"
+        default: Published
+        type: choice
+        options: [Published, Saved]
+
+# Never let two uploads race for the same place.
+concurrency:
+  group: publish-roblox
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/bin"
+          tmp=$(mktemp -d)
+          cd "$tmp"
+          curl -sSLO https://github.com/rojo-rbx/rojo/releases/download/v7.7.0/rojo-7.7.0-linux-x86_64.zip
+          curl -sSLO https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-x86_64.zip
+          curl -sSLO https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-linux.zip
+          for z in *.zip; do unzip -q -o "$z" -d "$HOME/bin"; done
+          chmod +x "$HOME/bin"/*
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Build and publish
+        env:
+          ROBLOX_API_KEY: ${{ secrets.ROBLOX_API_KEY }}
+          VERSION_TYPE: ${{ inputs.version_type || 'Published' }}
+        run: |
+          set -euo pipefail
+          if [ -z "${ROBLOX_API_KEY}" ]; then
+            echo "::error::secrets.ROBLOX_API_KEY is not set (GarfGames org secret, private repos)" >&2
+            exit 1
+          fi
+          if [ "$VERSION_TYPE" = "Saved" ]; then
+            tool/publish.sh --saved
+          else
+            tool/publish.sh
+          fi

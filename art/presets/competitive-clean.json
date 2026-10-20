@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "competitive-clean",
+  "name": "Competitive Clean",
+  "genres": ["arena competition", "skill challenge"],
+  "audience": "Players prioritizing rapid reads, fair visibility and low input friction.",
+  "camera": "Third-person action camera; test targets at maximum engagement distance.",
+  "devices": ["phone", "tablet", "desktop", "console"],
+  "pillars": ["Signal over ornament", "Fair contrast", "Predictable spatial rhythm"],
+  "identity": "Chevron cutouts and layered lane rails form an original modular sports-space vocabulary.",
+  "palette": {
+    "base": ["#273B50", "#BBCBD0", "#F0EFE5"],
+    "accent": ["#2EADB4", "#ED9B50"],
+    "semantic": { "interactable": "#22AFC0", "hazard": "#D95E58", "reward": "#E6AA3C", "neutral": "#677B8C" },
+    "rule": "Separate teams by silhouette, pattern and labeling as well as color; neutral environment stays subdued."
+  },
+  "geometry": "Low-noise modular lanes, clean collision silhouettes and clear sightline borders.",
+  "materials": { "surfaces": "Matte court composite, smooth metal rails and minimal grip strips.", "texture_rule": "Low-frequency surfaces; no distracting cracks, specular glare or camouflage.", "tiling_rule": "Repeat court patterns only where alignment supports spatial reading; inspect at match camera." },
+  "lighting": "Even exposure with stable target contrast; avoid deep shadows at combat intersections.",
+  "effects": "Short-lived hit and direction cues with occlusion limits; no lingering view-blocking particles.",
+  "ui": "Prioritize timer, objective and team readability; phone touch targets and keyboard/controller parity.",
+  "audio": "Distinct directional impacts and objective stingers, low-masking background rhythm.",
+  "budgets": { "target_fps_phone": 60, "max_texture_edge_px": 512, "max_texture_bytes": 1048576, "reuse_rule": "Use a small arena kit and shared surface palette; favor geometry over unique textures." },
+  "originality": "Invent competition branding, shapes and arenas; do not echo existing Roblox game emblems or HUDs."
+}

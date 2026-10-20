@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roblox-factory.local/art/schemas/generation-request.schema.json",
+  "title": "Roblox Factory local image generation request v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "mode", "asset_type", "description", "roblox_usage",
+               "style", "prompt", "delivery", "generation", "output", "quality"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*-[0-9]{4,}$" },
+    "mode": { "enum": ["experimental", "production"] },
+    "asset_type": { "enum": ["tileable_texture", "image", "decal", "ui"] },
+    "description": { "$ref": "#/$defs/text" },
+    "roblox_usage": { "$ref": "#/$defs/text" },
+    "style": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "profile_id"],
+          "properties": {
+            "kind": { "const": "preset" },
+            "profile_id": { "$ref": "#/$defs/slug" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "profile_id", "game_id", "bible_version"],
+          "properties": {
+            "kind": { "const": "art_bible" },
+            "profile_id": { "$ref": "#/$defs/slug" },
+            "game_id": { "$ref": "#/$defs/slug" },
+            "bible_version": { "$ref": "#/$defs/text" }
+          }
+        }
+      ]
+    },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject"],
+      "properties": {
+        "subject": { "$ref": "#/$defs/text" },
+        "details": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 24,
+          "items": { "$ref": "#/$defs/text" }
+        },
+        "negative": { "type": "string" }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width_px", "height_px", "format", "tiling_required"],
+      "properties": {
+        "width_px": { "type": "integer", "minimum": 16, "maximum": 4096, "multipleOf": 16 },
+        "height_px": { "type": "integer", "minimum": 16, "maximum": 4096, "multipleOf": 16 },
+        "format": { "const": "png" },
+        "tiling_required": { "type": "boolean" }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflow_version", "seed"],
+      "properties": {
+        "workflow_version": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+        "seed": { "type": "integer", "minimum": 0, "maximum": 18446744073709551615 }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["directory", "workflow_path"],
+      "properties": {
+        "directory": { "type": "string", "pattern": "^outputs/generated/[a-z0-9][a-z0-9-]*$" },
+        "workflow_path": { "type": "string", "pattern": "^workflows/generated/[a-z0-9][a-z0-9-]*/workflow\\.json$" }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["b2_qa", "postprocess"],
+      "properties": {
+        "b2_qa": { "const": true },
+        "postprocess": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["seamless", "optimize_png"],
+          "properties": {
+            "seamless": { "enum": ["none", "generic_wrap_blend", "auto"] },
+            "optimize_png": { "enum": ["none", "lossless", "auto"] }
+          }
+        }
+      }
+    },
+    "notes": { "$ref": "#/$defs/text" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "mode": { "const": "experimental" } }, "required": ["mode"] },
+      "then": { "properties": { "style": { "properties": { "kind": { "const": "preset" } } } } }
+    },
+    {
+      "if": { "properties": { "mode": { "const": "production" } }, "required": ["mode"] },
+      "then": { "properties": { "style": { "properties": { "kind": { "const": "art_bible" } } } } }
+    },
+    {
+      "if": { "properties": { "asset_type": { "const": "tileable_texture" } }, "required": ["asset_type"] },
+      "then": { "properties": { "delivery": { "properties": { "tiling_required": { "const": true } } } } }
+    },
+    {
+      "if": { "properties": { "asset_type": { "enum": ["image", "decal", "ui"] } }, "required": ["asset_type"] },
+      "then": { "properties": { "delivery": { "properties": { "tiling_required": { "const": false } } } } }
+    }
+  ],
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S", "maxLength": 8000 },
+    "slug": { "type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$" }
+  }
+}

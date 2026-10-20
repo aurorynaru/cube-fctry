@@ -1,0 +1,112 @@
+{
+  "source": "7c1a96f1_000.png",
+  "source_sha256": "71891bc7e2c5c2868ff82d88eedfd30341d1b4c86c4a4b52037d27c8b79535a3",
+  "working_copy": "stone-offset-512-working.png",
+  "candidate": "stone-seamless-v4.png",
+  "preview": "stone-seamless-v4-3x3.png",
+  "join_detail": "stone-seamless-v4-join.png",
+  "dimensions": [
+    1024,
+    1024
+  ],
+  "method": "512x512 circular offset; four-way center-cross wrap blend; LAB luminance low-frequency flattening and highlight attenuation; optional feathered in-image exemplar replacement of pale vein and wrapped-kernel fine-grain sharpening",
+  "settings": {
+    "low_strength": 0.72,
+    "highlight_strength": 0.45,
+    "flat": 64,
+    "support": 256,
+    "replace_vein": true,
+    "periodic_sharpen": 0.5
+  },
+  "original_raw": {
+    "right_to_left_vertical_join": {
+      "mean_abs_rgb": 25.535,
+      "p95_abs_rgb": 67.0
+    },
+    "bottom_to_top_horizontal_join": {
+      "mean_abs_rgb": 33.244,
+      "p95_abs_rgb": 84.617
+    },
+    "ordinary_neighbors_x": {
+      "mean_abs_rgb": 13.422,
+      "p95_abs_rgb": 33.667
+    },
+    "ordinary_neighbors_y": {
+      "mean_abs_rgb": 13.878,
+      "p95_abs_rgb": 34.667
+    },
+    "vertical_join_ratio": 1.902,
+    "horizontal_join_ratio": 2.395
+  },
+  "candidate_raw": {
+    "right_to_left_vertical_join": {
+      "mean_abs_rgb": 13.902,
+      "p95_abs_rgb": 34.95
+    },
+    "bottom_to_top_horizontal_join": {
+      "mean_abs_rgb": 17.533,
+      "p95_abs_rgb": 43.617
+    },
+    "ordinary_neighbors_x": {
+      "mean_abs_rgb": 14.766,
+      "p95_abs_rgb": 37.667
+    },
+    "ordinary_neighbors_y": {
+      "mean_abs_rgb": 15.302,
+      "p95_abs_rgb": 39.0
+    },
+    "vertical_join_ratio": 0.941,
+    "horizontal_join_ratio": 1.146
+  },
+  "original_blurred_radius_8": {
+    "right_to_left_vertical_join": {
+      "mean_abs_rgb": 15.683,
+      "p95_abs_rgb": 50.667
+    },
+    "bottom_to_top_horizontal_join": {
+      "mean_abs_rgb": 21.635,
+      "p95_abs_rgb": 56.667
+    },
+    "ordinary_neighbors_x": {
+      "mean_abs_rgb": 0.433,
+      "p95_abs_rgb": 1.0
+    },
+    "ordinary_neighbors_y": {
+      "mean_abs_rgb": 0.343,
+      "p95_abs_rgb": 1.0
+    },
+    "vertical_join_ratio": 36.219,
+    "horizontal_join_ratio": 63.076
+  },
+  "candidate_blurred_radius_8": {
+    "right_to_left_vertical_join": {
+      "mean_abs_rgb": 2.882,
+      "p95_abs_rgb": 7.333
+    },
+    "bottom_to_top_horizontal_join": {
+      "mean_abs_rgb": 4.918,
+      "p95_abs_rgb": 12.283
+    },
+    "ordinary_neighbors_x": {
+      "mean_abs_rgb": 0.307,
+      "p95_abs_rgb": 1.0
+    },
+    "ordinary_neighbors_y": {
+      "mean_abs_rgb": 0.253,
+      "p95_abs_rgb": 1.0
+    },
+    "vertical_join_ratio": 9.388,
+    "horizontal_join_ratio": 19.439
+  },
+  "original_texture_stats": {
+    "mean_luminance": 130.149,
+    "broad_tone_std_radius_32": 7.44,
+    "laplacian_variance": 2082.193
+  },
+  "candidate_texture_stats": {
+    "mean_luminance": 128.634,
+    "broad_tone_std_radius_32": 3.036,
+    "laplacian_variance": 2752.958
+  },
+  "note": "Metrics do not replace visual evaluation; no Roblox rendering tested."
+}

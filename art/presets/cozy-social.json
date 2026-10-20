@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "cozy-social",
+  "name": "Cozy Social",
+  "genres": ["social hub", "gentle creation"],
+  "audience": "Casual groups meeting, customizing spaces and lingering together.",
+  "camera": "Third-person conversational framing; faces and interaction points visible indoors.",
+  "devices": ["phone", "tablet", "desktop", "console"],
+  "pillars": ["Inviting shared spaces", "Soft personal expression", "Calm discovery"],
+  "identity": "Folded-roof pavilions and stitched fabric bands anchor a distinct garden-workshop world.",
+  "palette": {
+    "base": ["#EADBC4", "#A0B9A6", "#706F67"],
+    "accent": ["#D99B86", "#A48CB8"],
+    "semantic": { "interactable": "#4A9C92", "hazard": "#C85F69", "reward": "#D8A244", "neutral": "#75847B" },
+    "rule": "Keep interaction prompts clear against warm backgrounds; pair colors with icons and text."
+  },
+  "geometry": "Human-scale rounded furnishings, readable seating clusters and wide shared circulation.",
+  "materials": { "surfaces": "Soft timber, matte clay and simple textiles.", "texture_rule": "Quiet woven and wood grain detail that does not compete with avatars.", "tiling_rule": "Large floor or wall materials need 3x3 repeat review and variation at room scale." },
+  "lighting": "Warm diffuse afternoon light with gentle practical lamps; preserve face readability.",
+  "effects": "Sparse floating seeds or steam; avoid particle clutter during gatherings.",
+  "ui": "Friendly cards, readable names, explicit privacy and interaction states on mobile.",
+  "audio": "Soft plucks and environmental beds; provide comfortable quiet gaps for conversation.",
+  "budgets": { "target_fps_phone": 30, "max_texture_edge_px": 1024, "max_texture_bytes": 2097152, "reuse_rule": "Share modular furniture frames with color and fabric swaps instead of duplicate meshes." },
+  "originality": "Create unique social props and iconography; exclude copied avatars, mascots, brands and recognizable hubs."
+}

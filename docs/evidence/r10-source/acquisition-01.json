@@ -1,0 +1,133 @@
+{
+  "scope": "R10 public pinned source, data only; installed binary correlation unverified",
+  "files": [
+    {
+      "file": "oc-tag.json",
+      "requested_url": "https://api.github.com/repos/anomalyco/opencode/git/ref/tags/v1.19.0",
+      "acquired_at_host_utc": "2026-10-18T07:07:53.931070+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://api.github.com/repos/anomalyco/opencode/git/ref/tags/v1.19.0",
+      "status": 200,
+      "etag": "W/\"15bbdbe98c3721df3779cad361c29bf24a86cd589676cabfcc53809c72a39294\"",
+      "length": 341,
+      "sha256": "5397b1790ce4cea6b07a7ccdc9e3d48a2fd314017a0a1addbff9e6e5b705c246"
+    },
+    {
+      "file": "oc-commit.json",
+      "requested_url": "https://api.github.com/repos/anomalyco/opencode/git/commits/733b2c627e5aec39cb33cc22373bdce33053ef2c",
+      "acquired_at_host_utc": "2026-10-18T07:07:54.534724+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://api.github.com/repos/anomalyco/opencode/git/commits/733b2c627e5aec39cb33cc22373bdce33053ef2c",
+      "status": 200,
+      "etag": "W/\"2f867389ce39bb4490a0f99d670ad73daccee970874cf9d912053f63539ec853\"",
+      "length": 1085,
+      "sha256": "d04f8997785f9e4bd2d6ab2dffdb01063ba719b2f39bc72327908109d2d31151"
+    },
+    {
+      "file": "oc-release.json",
+      "requested_url": "https://api.github.com/repos/anomalyco/opencode/releases/tags/v1.19.0",
+      "acquired_at_host_utc": "2026-10-18T07:07:54.900061+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://api.github.com/repos/anomalyco/opencode/releases/tags/v1.19.0",
+      "status": 200,
+      "etag": "W/\"9b2c6521c97e4b5c1d0abfe2b649b0e5d42f7ff1abb543ce45b6310b65265e59\"",
+      "length": 64271,
+      "sha256": "312b675a5a8294b3fae65f937efb06491dba7e6e97d11113c0834cf3ab46adc6"
+    },
+    {
+      "file": "oc-package.json",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/package.json",
+      "acquired_at_host_utc": "2026-10-18T07:07:55.401420+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/package.json",
+      "status": 200,
+      "etag": "\"779109a81c892c5dcf8f63f457fe9aa4e94328495839776c186b22a70f3637a7\"",
+      "length": 5268,
+      "sha256": "dd03234cf489d0bdf1c5e8760140af44bb0a5249dc745a192dd8d343d7f876f7"
+    },
+    {
+      "file": "oc-mcp.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/mcp/index.ts",
+      "acquired_at_host_utc": "2026-10-18T07:07:55.683389+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/mcp/index.ts",
+      "status": 200,
+      "etag": "\"f9706a0968017cb932da1d4880f361d7b901b8a088135fcc05da9e5d4deb2869\"",
+      "length": 37745,
+      "sha256": "82c459309dfd005d25daecfabc1007d807d4bee23f6078434974277938a1c026"
+    },
+    {
+      "file": "oc-catalog.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/mcp/catalog.ts",
+      "acquired_at_host_utc": "2026-10-18T07:07:56.214932+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/mcp/catalog.ts",
+      "status": 200,
+      "etag": "\"5a413fd70efb6ed874f1a8cc2ef4aab87eb70d5b4ead08420b17c90b5da1a575\"",
+      "length": 5834,
+      "sha256": "1123ce304cd647e0945aa98743f411a69988f6dde63867aea78b74c72a5abe11"
+    },
+    {
+      "file": "oc-lock.jsonc",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/bun.lock",
+      "acquired_at_host_utc": "2026-10-18T07:07:56.535829+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/bun.lock",
+      "status": 200,
+      "etag": "\"5c5f8905e410eae8d5a8f8511a6ffcba50f6fa529c65170c4b2ac19e0015dfdc\"",
+      "length": 875978,
+      "sha256": "4e8ab76d77338a00de7cdf992f5c275d665902ae111d595074f3f143d4de0ac5"
+    },
+    {
+      "file": "oc-config.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/config/config.ts",
+      "acquired_at_host_utc": "2026-10-18T07:07:56.926145+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/config/config.ts",
+      "status": 200,
+      "etag": "\"69644fb1d929dc7ccb228141a7ea23728c2e44317872ca9586ebc71ef4107043\"",
+      "length": 27747,
+      "sha256": "87a9071af1ddb04d65947dba49be3fb4c94ecf63e120f17ce46ee81ff25dd45a"
+    },
+    {
+      "file": "oc-plugin.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/plugin/index.ts",
+      "acquired_at_host_utc": "2026-10-18T07:07:57.266152+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/plugin/index.ts",
+      "status": 200,
+      "etag": "\"587c563a3e8f5eb97d9e042181bb89777b89e23a87bfea02af077385554b86dc\"",
+      "length": 11339,
+      "sha256": "47c62b7cfae891d268e6b239edb0f1c46df5cb35eb11ccfd8bd4186c156024e9"
+    },
+    {
+      "file": "oc-prompt.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/session/prompt.ts",
+      "acquired_at_host_utc": "2026-10-18T07:07:57.587063+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/session/prompt.ts",
+      "status": 200,
+      "etag": "\"84d53f1bb63c4eac7d68abc81827cb6e2daaa3529609a2b37b9f5a596d644325\"",
+      "length": 64944,
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768"
+    },
+    {
+      "file": "oc-build.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/script/build.ts",
+      "acquired_at_host_utc": "2026-10-18T07:07:57.933310+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/script/build.ts",
+      "status": 200,
+      "etag": "\"9603932d1309f0af59d963af4b00952d603e07d2e30da7bcf197268080197474\"",
+      "length": 7289,
+      "sha256": "37362ba0ff8f0d82a917970a648fc79a4d35264a2fa405ca126e918a967563f9"
+    },
+    {
+      "file": "sdk-tag.json",
+      "requested_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/git/ref/tags/1.29.0",
+      "acquired_at_host_utc": "2026-10-18T07:07:58.264008+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}

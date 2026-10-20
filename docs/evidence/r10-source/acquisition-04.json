@@ -1,0 +1,16 @@
+{
+  "scope": "R10 public pinned source, data only; installed binary correlation unverified",
+  "files": [
+    {
+      "file": "oc-publish.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/script/publish.ts",
+      "acquired_at_host_utc": "2026-10-18T07:22:45.446844+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/script/publish.ts",
+      "status": 200,
+      "etag": "\"f435818a26da24c8ad46842af499379aa90e20d4e10fe1660503cfa89f4f97c2\"",
+      "length": 7916,
+      "sha256": "a865f09f5d59e349dfacd3b96689caf9ceb29c0f019a2c4afbde85e6394fc5ce"
+    }
+  ]
+}

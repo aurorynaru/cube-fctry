@@ -1,0 +1,104 @@
+{
+  "scope": "R10 public pinned source, data only; installed binary correlation unverified",
+  "files": [
+    {
+      "file": "oc-root-package.json",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/package.json",
+      "acquired_at_host_utc": "2026-10-18T07:14:39.318518+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/package.json",
+      "status": 200,
+      "etag": "\"187fdd7d79fca6e8218bea43ddb735d9aa603f4cd1989833569049786ee888d9\"",
+      "length": 6052,
+      "sha256": "564e182ea9f962fe4ac148b2c93f6679b38cecd62d81abf6b51f5a2a88e03262"
+    },
+    {
+      "file": "oc-hooks.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/plugin/src/index.ts",
+      "acquired_at_host_utc": "2026-10-18T07:14:39.839488+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/plugin/src/index.ts",
+      "status": 200,
+      "etag": "\"93b74a5ae04cd5c0cfe28f833b5717d46c64344f1857a775f75359de3dc1a43d\"",
+      "length": 9053,
+      "sha256": "7ce98ddab759903e6618b40a1c8beb1b621f0691f8f508ad2c07dba2041744e1"
+    },
+    {
+      "file": "oc-truncate.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/tool/truncate.ts",
+      "acquired_at_host_utc": "2026-10-18T07:14:40.155722+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/tool/truncate.ts",
+      "status": 200,
+      "etag": "\"514c8c8ff335b80e4595d103d647a9d2ca81b89c1a07ae48280f4f0fb8ef90e8\"",
+      "length": 6152,
+      "sha256": "d3dc9e7402de74a7652ceb9f7796c970efc4958597b51a94fa264697366ccea5"
+    },
+    {
+      "file": "oc-flag.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/core/src/flag/flag.ts",
+      "acquired_at_host_utc": "2026-10-18T07:14:40.481843+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/core/src/flag/flag.ts",
+      "status": 200,
+      "etag": "\"d9e87b311386420aff462e1c3a024093e7fce74b3f541d54d5ccd06056669f7b\"",
+      "length": 3298,
+      "sha256": "f387ba5da5b24bb8fa316c8bc32aac778552c7bb199b42ed17adef03714ce6c5"
+    },
+    {
+      "file": "oc-global.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/core/src/global.ts",
+      "acquired_at_host_utc": "2026-10-18T07:14:40.814460+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/core/src/global.ts",
+      "status": 200,
+      "etag": "\"c699269ef001f073e2fb398b781ccf7ea0ec419cb45f708308a0b92547ddf0d4\"",
+      "length": 2162,
+      "sha256": "37c9aae045e01cd246cd4d8c489e84ea4849b6297d3a6f9ff9b1bca57f85c013"
+    },
+    {
+      "file": "oc-permission.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/permission/index.ts",
+      "acquired_at_host_utc": "2026-10-18T07:14:41.142596+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/permission/index.ts",
+      "status": 200,
+      "etag": "\"b41d9bbf844344dc6582251006216cb16883b9c6353f4059428651d94d7b9e9c\"",
+      "length": 7861,
+      "sha256": "5b9e4aa65290a39363722b9fae4c68080188d8ed76896afa0d96cd9dbfd2821d"
+    },
+    {
+      "file": "oc-llm.ts",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/session/llm.ts",
+      "acquired_at_host_utc": "2026-10-18T07:14:41.480912+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/packages/opencode/src/session/llm.ts",
+      "status": 200,
+      "etag": "\"99f30277d3f528589bd45a7f37a05976033941c3a2774496dbbf9987c9636a61\"",
+      "length": 15097,
+      "sha256": "5f1dcfb734853e39760e4dd05470f0c7d8752fc5dcc64e118c065149602e402d"
+    },
+    {
+      "file": "oc-license.txt",
+      "requested_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/LICENSE",
+      "acquired_at_host_utc": "2026-10-18T07:14:41.795107+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/anomalyco/opencode/733b2c627e5aec39cb33cc22373bdce33053ef2c/LICENSE",
+      "status": 200,
+      "etag": "\"c69ccc2fb7b77077cce941cfff311c210f832b82f599cf26a4170227276b9b82\"",
+      "length": 1065,
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b"
+    },
+    {
+      "file": "sdk-license.txt",
+      "requested_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/e12cbd7078db388152f6e839abdbe09ba01f3f32/LICENSE",
+      "acquired_at_host_utc": "2026-10-18T07:14:42.111322+00:00",
+      "method": "Python standard-library urllib.request HTTPS GET; response body saved unchanged",
+      "final_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/e12cbd7078db388152f6e839abdbe09ba01f3f32/LICENSE",
+      "status": 200,
+      "etag": "\"12c9bf5cf44ecc5f942cd282b67d67ba041a7905e812e7b61a10f2a8cfaaf664\"",
+      "length": 1071,
+      "sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d"
+    }
+  ]
+}

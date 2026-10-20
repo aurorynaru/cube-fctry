@@ -1,0 +1,71 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "provider": {
+    "tabby": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local TabbyAPI",
+      "options": {
+        "baseURL": "http://127.0.0.1:5000/v1",
+        "apiKey": "{env:TABBY_API_KEY}"
+      },
+      "models": {
+        "Qwen3.8-27B-4.5bpw": {
+          "name": "Qwen3.8 27B EXL3 4.5bpw",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 196608,
+            "input": 163840,
+            "output": 32768
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "roblox_studio": {
+      "type": "local",
+      "command": ["cmd.exe", "/d", "/c", "%LOCALAPPDATA%\\Roblox\\mcp.bat"],
+      "enabled": false,
+      "timeout": 30000
+    },
+    "comfyui": {
+      "type": "local",
+      "command": ["comfy-mcp"],
+      "enabled": false,
+      "timeout": 30000
+    }
+  },
+  "permission": {
+    "external_directory": {
+      "*": "deny",
+      "C:/nvm4w/nodejs/node_modules/opencode-ai/package.json": "allow",
+      "C:/nvm4w/nodejs/node_modules/opencode-ai/bin/opencode.exe": "allow"
+    },
+    "edit": {
+      "*": "allow",
+      "C:/nvm4w/nodejs/node_modules/opencode-ai/package.json": "deny",
+      "C:/nvm4w/nodejs/node_modules/opencode-ai/bin/opencode.exe": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git ls-files*": "allow",
+      "git rev-parse*": "allow",
+      "git check-ignore*": "allow",
+      "git add*": "deny",
+      "git commit*": "deny",
+      "git push*": "deny"
+    }
+  }
+}

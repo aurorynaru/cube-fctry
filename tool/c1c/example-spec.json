@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "run_id": "c1c-20261017-01",
+  "asset": {
+    "asset_id": "rbxassetid://112705883084796",
+    "asset_type": "image",
+    "source_path": "workflows/textures/b21/stone-seamless-v4-lossless-opt.png",
+    "source_sha256": "782b2c956c404622ea3e992edf9f906ddcb22422596a4f9ad9c501de14a1d33a",
+    "status": "test_only_unapproved",
+    "upload": false,
+    "manifest_path": "art/imports/roblox-assets.json"
+  },
+  "studio": {
+    "studio_id": "577768ad-49d8-42f5-ac96-8c66cd12a144",
+    "place": "local-unsaved",
+    "mode": "edit",
+    "team_create": false
+  },
+  "texture_scales": [
+    { "name": "4spt", "studs_per_tile": 4 },
+    { "name": "8spt", "studs_per_tile": 8 },
+    { "name": "16spt", "studs_per_tile": 16 },
+    { "name": "32spt", "studs_per_tile": 32 }
+  ],
+  "geometry": {
+    "grid_origin": [0, 0.5, 65],
+    "panel_size_studs": 32,
+    "columns": 2,
+    "gap_studs": 4,
+    "labels_enabled": true,
+    "seam": {
+      "enabled": true,
+      "center": [0, 0.5, 125],
+      "size_studs": 16,
+      "studs_per_tile": 6,
+      "right_offset_u": 16
+    }
+  },
+  "screenshots": [
+    {
+      "capture_id": "C1C_baseline_1",
+      "phase": "pre_rig",
+      "purpose": "Confirm the untouched baseline scene before creating the rig.",
+      "required": true,
+      "camera": null
+    },
+    {
+      "capture_id": "C1C_rig_wide_1",
+      "phase": "rig",
+      "purpose": "Show all texture-scale panels and the seam pair together.",
+      "required": true,
+      "camera": { "position": [0, 45, 20], "look_at": [0, 0, 65] }
+    },
+    {
+      "capture_id": "C1C_scale_4_1",
+      "phase": "rig",
+      "purpose": "Inspect 4 studs per tile.",
+      "required": true,
+      "camera": { "position": [-18, 28, 42], "look_at": [-18, 0.5, 47] }
+    },
+    {
+      "capture_id": "C1C_scale_8_1",
+      "phase": "rig",
+      "purpose": "Inspect 8 studs per tile.",
+      "required": true,
+      "camera": { "position": [18, 28, 42], "look_at": [18, 0.5, 47] }
+    },
+    {
+      "capture_id": "C1C_scale_16_1",
+      "phase": "rig",
+      "purpose": "Inspect 16 studs per tile.",
+      "required": true,
+      "camera": { "position": [-18, 28, 78], "look_at": [-18, 0.5, 83] }
+    },
+    {
+      "capture_id": "C1C_scale_32_1",
+      "phase": "rig",
+      "purpose": "Inspect 32 studs per tile.",
+      "required": true,
+      "camera": { "position": [18, 28, 78], "look_at": [18, 0.5, 83] }
+    },
+    {
+      "capture_id": "C1C_seam_1",
+      "phase": "rig",
+      "purpose": "Inspect cross-part UV continuity at the shared seam.",
+      "required": true,
+      "camera": { "position": [0, 30, 105], "look_at": [0, 0.5, 125] }
+    },
+    {
+      "capture_id": "C1C_cleanup_1",
+      "phase": "post_cleanup",
+      "purpose": "Confirm the scene is back to baseline after cleanup.",
+      "required": true,
+      "camera": null
+    }
+  ],
+  "cleanup": {
+    "verify_baseline": true,
+    "allow_safe_rename": true,
+    "preserve_failure_evidence": true
+  },
+  "evidence": {
+    "out_dir": "registry/evidence/c1c",
+    "require_durable_files": false,
+    "capture_retries": 2
+  },
+  "b1": {
+    "registry_unchanged": true
+  },
+  "b2": {
+    "evidence_path": "registry/evidence/texture-qa-b21/stone-seamless-v4-lossless-opt-f18d45a9bf68-782b2c956c40.json",
+    "require_pending_gates": true
+  }
+}

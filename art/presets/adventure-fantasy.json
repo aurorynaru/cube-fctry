@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "adventure-fantasy",
+  "name": "Adventure Fantasy",
+  "genres": ["quest adventure", "fantasy exploration"],
+  "audience": "Explorers seeking legible landmarks and a sense of discovery.",
+  "camera": "Third-person exploration with medium-to-long landmark views.",
+  "devices": ["phone", "tablet", "desktop", "console"],
+  "pillars": ["Landmark silhouettes", "Layered history", "Mystery with readable paths"],
+  "identity": "Woven arch motifs and staggered stone ribs repeat across an original ruined-waystation culture.",
+  "palette": {
+    "base": ["#314D50", "#887B69", "#D5B888"],
+    "accent": ["#80B8AA", "#D69B5C"],
+    "semantic": { "interactable": "#68C4BD", "hazard": "#BE5661", "reward": "#E5B752", "neutral": "#80908D" },
+    "rule": "Keep navigation lights cooler than treasure glows; reinforce differences with silhouette and motion."
+  },
+  "geometry": "Strong architectural tiers and varied but coherent erosion; paths remain readable through clutter.",
+  "materials": { "surfaces": "Weathered stone, woven fiber and oxidized metal with restrained hand-shaped variation.", "texture_rule": "Mid-frequency wear follows edges and contact points, never uniform noise.", "tiling_rule": "Blend repeated stone with decals or modular breakup; test 3x3 and long sightlines." },
+  "lighting": "Warm directional sun against cool ambient recesses; entrances and objectives retain contrast.",
+  "effects": "Sparse dust and rune glints at points of interest; no constant opaque fog on objectives.",
+  "ui": "Map-like borders and compact glyphs backed by plain text; maintain mobile readability.",
+  "audio": "Layered wind, wood and low strings; objective cues remain distinct from ambience.",
+  "budgets": { "target_fps_phone": 30, "max_texture_edge_px": 1024, "max_texture_bytes": 2097152, "reuse_rule": "Build landmark kits from reusable arches, ribs and stone trims with limited variants." },
+  "originality": "Create a new culture and insignia; avoid named fantasy universes, borrowed maps or recognizable quest icons."
+}

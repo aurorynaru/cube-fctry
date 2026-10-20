@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "id": "b3-stone-paving-0001",
+  "asset_type": "tileable_texture",
+  "game_id": "b3-experimental",
+  "style_profile_id": "adventure-fantasy",
+  "description": "Original stylized fantasy stone paving texture with large readable hand-painted stone shapes, a stylized blue-gray palette, low photographic noise and an orthographic albedo appearance. Intended for repeating floor surfaces. No perspective, text or watermark.",
+  "roblox_usage": "Repeating floor surface in an original fantasy exploration game; flat albedo material only.",
+  "delivery": {
+    "width_px": 1024,
+    "height_px": 1024,
+    "format": "png",
+    "tiling_required": true
+  },
+  "generation": {
+    "model": "flux3_image_klein_sd_int8_convrot.safetensors",
+    "workflow": "workflows/generated/b3-stone-paving-0001/workflow.json",
+    "method": "local_ai",
+    "seed": 20261018
+  },
+  "provenance": {
+    "source": "EXPERIMENTAL: local FLUX 3 generation from a baseline preset; not a game-approved Art Bible and not a registered B1 candidate.",
+    "license": "Rights and license review pending; generated locally with no third-party source asset input.",
+    "derivations": [
+      "style profile: adventure-fantasy",
+      "workflow version: flux3-klein-v1",
+      "workflow path: workflows/generated/b3-stone-paving-0001/workflow.json"
+    ]
+  },
+  "quality_gates": {
+    "originality": {
+      "result": "pending",
+      "evidence": []
+    },
+    "rights": {
+      "result": "pending",
+      "evidence": []
+    },
+    "style": {
+      "result": "pending",
+      "evidence": []
+    },
+    "technical": {
+      "result": "pending",
+      "evidence": []
+    },
+    "performance": {
+      "result": "pending",
+      "evidence": []
+    },
+    "tiling": {
+      "result": "pending",
+      "evidence": []
+    },
+    "in_engine": {
+      "result": "pending",
+      "evidence": []
+    }
+  },
+  "approval": {
+    "status": "draft"
+  }
+}

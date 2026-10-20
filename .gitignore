@@ -1,0 +1,93 @@
+# Local macOS metadata
+.DS_Store
+
+# Generated Python cache files
+__pycache__/
+*.py[cod]
+
+# Local Roblox place/model files
+/*.rbxl
+/*.rbxlx
+/*.rbxm
+/*.rbxmx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+# Rojo/generated output
+/sourcemap.json
+/output/
+
+# Open Cloud API key (never commit)
+.env.publish
+
+# Rojo build output
+/build/
+
+# Local transient generation/QA artifacts
+*.part
+/tool/**/__pycache__/
+/registry/events.lock
+/outputs/tmp/
+/.pytest_cache/
+/.ruff_cache/
+
+# Local secrets and environment overrides (keep example files)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Credentials, signing keys, and local authentication files
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+.netrc
+_netrc
+.npmrc
+.pypirc
+credentials.json
+credentials.*.json
+service-account*.json
+secrets.json
+secrets.*.json
+*.secret
+*.secrets
+.secrets/
+secrets/
+
+# Local agent sessions, histories, and machine-specific overrides
+.swarm/
+.codex/
+.claude/
+.opencode/
+*.local
+*.local.*
+
+# Runtime logs and local databases may contain private session data
+*.log
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.db
+
+# Local scratch files and accidental shell output
+*.tmp
+*.bak
+*.swp
+*.swo
+/outputs/**/_scratch/
+/untracked-list.txt
+/tatus --short
+
+# Note: outputs/generated/, workflows/generated/, registry/staging/ and
+# registry/evidence/ are intentionally not ignored: they preserve reproducible
+# candidate provenance and QA evidence for review.

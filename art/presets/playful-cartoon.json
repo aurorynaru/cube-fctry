@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "playful-cartoon",
+  "name": "Playful Cartoon",
+  "genres": ["light platformer", "toybox exploration"],
+  "audience": "Broad age range; immediate recognition for new players.",
+  "camera": "Third-person with readable silhouettes at medium distance.",
+  "devices": ["phone", "tablet", "desktop", "console"],
+  "pillars": ["Buoyant proportions", "Clear affordances", "Gentle visual humor"],
+  "identity": "Stacked pebble-like forms and offset stripes establish a fresh toy-world language.",
+  "palette": {
+    "base": ["#F4DDA8", "#6AB6AD", "#465F79"],
+    "accent": ["#F47E68", "#F7C85A"],
+    "semantic": { "interactable": "#27AFA1", "hazard": "#D84D58", "reward": "#F5BB43", "neutral": "#657789" },
+    "rule": "Reserve saturated accents for actionable items; pair semantic hues with shape and icon cues."
+  },
+  "geometry": "Rounded block primitives, oversize handles and exaggerated but distinct silhouettes; no micro-detail at play distance.",
+  "materials": { "surfaces": "Mostly matte painted wood, rubber and soft ceramic.", "texture_rule": "Use broad color fields and sparse handmade marks rather than noisy photo detail.", "tiling_rule": "Only repeat on large ground or wall areas; verify joins and motif repetition in 3x3." },
+  "lighting": "Bright soft key, mild ambient fill and controlled shadow contrast.",
+  "effects": "Brief squash-like particles for feedback; avoid full-screen persistent bloom.",
+  "ui": "Large rounded controls, text labels with icons, generous mobile touch targets.",
+  "audio": "Short pitched wooden taps and airy percussive motifs; distinct reward and danger signatures.",
+  "budgets": { "target_fps_phone": 30, "max_texture_edge_px": 1024, "max_texture_bytes": 2097152, "reuse_rule": "Reuse a compact material atlas and recolor modular prop families." },
+  "originality": "Invent silhouettes, symbols and characters for this game; exclude copied franchise shapes, logos and familiar Roblox-game identities."
+}

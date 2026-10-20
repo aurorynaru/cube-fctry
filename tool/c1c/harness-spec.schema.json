@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roblox-factory.local/schemas/c1c-harness-spec.schema.json",
+  "title": "C1C reusable in-engine QA harness specification",
+  "description": "Project-relative, test-only spec for an authorized Studio asset verification run. It does not authorize an upload, a save, a publish or a B1 registry event.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "asset",
+    "studio",
+    "texture_scales",
+    "geometry",
+    "screenshots",
+    "cleanup",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_id", "asset_type", "status", "upload"],
+      "properties": {
+        "asset_id": {
+          "type": "string",
+          "pattern": "^rbxassetid://[1-9][0-9]*$"
+        },
+        "asset_type": {
+          "const": "image"
+        },
+        "source_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "status": {
+          "const": "test_only_unapproved"
+        },
+        "upload": {
+          "const": false,
+          "description": "Must be false. The harness never uploads assets; it only verifies an existing ID recorded in the project asset manifest."
+        },
+        "manifest_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "studio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["studio_id", "place", "mode", "team_create"],
+      "properties": {
+        "studio_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "place": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "const": "edit"
+        },
+        "team_create": {
+          "const": false
+        }
+      }
+    },
+    "texture_scales": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "studs_per_tile"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,31}$"
+          },
+          "studs_per_tile": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grid_origin", "panel_size_studs", "columns", "gap_studs", "labels_enabled", "seam"],
+      "properties": {
+        "grid_origin": {
+          "$ref": "#/$defs/position"
+        },
+        "panel_size_studs": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "gap_studs": {
+          "type": "number",
+          "minimum": 0
+        },
+        "labels_enabled": {
+          "type": "boolean"
+        },
+        "seam": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["enabled", "center", "size_studs", "studs_per_tile", "right_offset_u"],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "center": {
+              "$ref": "#/$defs/position"
+            },
+            "size_studs": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "studs_per_tile": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "right_offset_u": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["capture_id", "phase", "purpose", "required"],
+        "properties": {
+          "capture_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"
+          },
+          "phase": {
+            "enum": ["pre_rig", "rig", "post_cleanup"]
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "camera": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["position", "look_at"],
+                "properties": {
+                  "position": {
+                    "$ref": "#/$defs/position"
+                  },
+                  "look_at": {
+                    "$ref": "#/$defs/position"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "cleanup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verify_baseline", "allow_safe_rename", "preserve_failure_evidence"],
+      "properties": {
+        "verify_baseline": {
+          "const": true
+        },
+        "allow_safe_rename": {
+          "type": "boolean",
+          "description": "Permit the harness to rename a tagged, run-ID-verified Texture/Decal child whose name lacks the C1C_ prefix. Never permits deleting an unverified object."
+        },
+        "preserve_failure_evidence": {
+          "const": true
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["out_dir", "require_durable_files", "capture_retries"],
+      "properties": {
+        "out_dir": {
+          "const": "registry/evidence/c1c"
+        },
+        "require_durable_files": {
+          "type": "boolean",
+          "description": "When true, an inline-only capture makes the evidence incomplete. The harness never fabricates a file to satisfy this."
+        },
+        "capture_retries": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        }
+      }
+    },
+    "b1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_unchanged"],
+      "properties": {
+        "registry_unchanged": {
+          "const": true
+        }
+      }
+    },
+    "b2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["require_pending_gates"],
+      "properties": {
+        "evidence_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "require_pending_gates": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "position": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

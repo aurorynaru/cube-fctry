@@ -1,0 +1,75 @@
+{
+  "source": "7c1a96f1_000.png",
+  "source_sha256": "71891bc7e2c5c2868ff82d88eedfd30341d1b4c86c4a4b52037d27c8b79535a3",
+  "source_bytes": 2311490,
+  "source_format": "PNG",
+  "source_mode": "RGB",
+  "source_dimensions": [
+    1024,
+    1024
+  ],
+  "preview": "stone-texture-3x3-preview.png",
+  "preview_dimensions": [
+    3072,
+    3072
+  ],
+  "seam_detail": "stone-texture-seam-detail.png",
+  "comparison": "Absolute RGB differences (0-255) across opposite edges versus adjacent pixels inside the original image. A vertical join uses its right and left columns; a horizontal join uses its bottom and top rows. Gaussian blur radius 8 px compares broad color/tone changes.",
+  "raw": {
+    "left_to_right_vertical_seam": {
+      "mean_abs_rgb": 25.535,
+      "median_abs_rgb": 20.333,
+      "p95_abs_rgb": 67.0,
+      "max_abs_rgb": 139.333
+    },
+    "top_to_bottom_horizontal_seam": {
+      "mean_abs_rgb": 33.244,
+      "median_abs_rgb": 27.667,
+      "p95_abs_rgb": 84.617,
+      "max_abs_rgb": 132.333
+    },
+    "ordinary_vertical_neighbors": {
+      "mean_abs_rgb": 13.422,
+      "median_abs_rgb": 11.0,
+      "p95_abs_rgb": 33.667,
+      "max_abs_rgb": 132.0
+    },
+    "ordinary_horizontal_neighbors": {
+      "mean_abs_rgb": 13.878,
+      "median_abs_rgb": 11.667,
+      "p95_abs_rgb": 34.667,
+      "max_abs_rgb": 118.667
+    },
+    "vertical_seam_to_neighbor_mean_ratio": 1.902,
+    "horizontal_seam_to_neighbor_mean_ratio": 2.395
+  },
+  "blurred_radius_8_px": {
+    "left_to_right_vertical_seam": {
+      "mean_abs_rgb": 15.683,
+      "median_abs_rgb": 12.0,
+      "p95_abs_rgb": 50.667,
+      "max_abs_rgb": 60.0
+    },
+    "top_to_bottom_horizontal_seam": {
+      "mean_abs_rgb": 21.635,
+      "median_abs_rgb": 16.333,
+      "p95_abs_rgb": 56.667,
+      "max_abs_rgb": 85.0
+    },
+    "ordinary_vertical_neighbors": {
+      "mean_abs_rgb": 0.433,
+      "median_abs_rgb": 0.333,
+      "p95_abs_rgb": 1.0,
+      "max_abs_rgb": 3.333
+    },
+    "ordinary_horizontal_neighbors": {
+      "mean_abs_rgb": 0.343,
+      "median_abs_rgb": 0.333,
+      "p95_abs_rgb": 1.0,
+      "max_abs_rgb": 4.0
+    },
+    "vertical_seam_to_neighbor_mean_ratio": 36.219,
+    "horizontal_seam_to_neighbor_mean_ratio": 63.076
+  },
+  "limitation": "Metrics and planar image preview do not measure 3D appearance, lighting, UV mapping, compression, or Roblox rendering. No threshold alone determines visual acceptability."
+}

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roblox-factory.local/art/schemas/asset-request.schema.json",
+  "title": "Roblox Factory asset request v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "id", "asset_type", "game_id", "style_profile_id", "description", "roblox_usage", "delivery", "generation", "provenance", "quality_gates", "approval"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*-[0-9]{4,}$" },
+    "asset_type": { "enum": ["tileable_texture", "image", "decal", "ui", "mesh", "audio", "vfx"] },
+    "game_id": { "$ref": "#/$defs/slug" },
+    "style_profile_id": { "$ref": "#/$defs/slug" },
+    "description": { "$ref": "#/$defs/text" }, "roblox_usage": { "$ref": "#/$defs/text" },
+    "delivery": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width_px", "height_px", "format", "tiling_required"],
+      "properties": {
+        "width_px": { "type": ["integer", "null"], "minimum": 1 },
+        "height_px": { "type": ["integer", "null"], "minimum": 1 },
+        "format": { "enum": ["png", "jpg", "webp", "fbx", "obj", "ogg", "wav", "mp3"] },
+        "tiling_required": { "type": "boolean" },
+        "artifact_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "generation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["model", "workflow", "method"],
+      "properties": {
+        "model": { "$ref": "#/$defs/text" }, "workflow": { "$ref": "#/$defs/text" },
+        "method": { "enum": ["local_ai", "procedural", "manual", "licensed_source"] },
+        "seed": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "license", "derivations"],
+      "properties": {
+        "source": { "$ref": "#/$defs/text" }, "license": { "$ref": "#/$defs/text" },
+        "derivations": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+        "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "quality_gates": {
+      "type": "object", "additionalProperties": false,
+      "required": ["originality", "rights", "style", "technical", "performance", "tiling", "in_engine"],
+      "properties": {
+        "originality": { "$ref": "#/$defs/gate" }, "rights": { "$ref": "#/$defs/gate" },
+        "style": { "$ref": "#/$defs/gate" }, "technical": { "$ref": "#/$defs/gate" },
+        "performance": { "$ref": "#/$defs/gate" }, "tiling": { "$ref": "#/$defs/gate" },
+        "in_engine": { "$ref": "#/$defs/gate" }
+      }
+    },
+    "approval": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["draft", "art_approved", "generated", "qc_pending", "qc_passed", "imported", "approved", "rejected"] },
+        "reviewer": { "$ref": "#/$defs/text" }, "date": { "type": "string", "format": "date" },
+        "roblox_asset_id": { "type": "string", "pattern": "^[0-9]+$" },
+        "registry_path": { "$ref": "#/$defs/text" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "asset_type": { "enum": ["tileable_texture", "image", "decal", "ui", "vfx"] } }, "required": ["asset_type"] },
+      "then": { "properties": { "delivery": { "properties": { "width_px": { "type": "integer" }, "height_px": { "type": "integer" }, "format": { "enum": ["png", "jpg", "webp"] } } } } }
+    },
+    {
+      "if": { "properties": { "asset_type": { "const": "audio" } }, "required": ["asset_type"] },
+      "then": { "properties": { "delivery": { "properties": { "width_px": { "type": "null" }, "height_px": { "type": "null" }, "format": { "enum": ["ogg", "wav", "mp3"] }, "tiling_required": { "const": false } } } } }
+    },
+    {
+      "if": { "properties": { "asset_type": { "const": "mesh" } }, "required": ["asset_type"] },
+      "then": { "properties": { "delivery": { "properties": { "width_px": { "type": "null" }, "height_px": { "type": "null" }, "format": { "enum": ["fbx", "obj"] }, "tiling_required": { "const": false } } } } }
+    },
+    {
+      "if": { "properties": { "asset_type": { "const": "tileable_texture" } }, "required": ["asset_type"] },
+      "then": { "properties": { "delivery": { "properties": { "tiling_required": { "const": true } } } } }
+    },
+    {
+      "if": { "properties": { "delivery": { "properties": { "tiling_required": { "const": true } }, "required": ["tiling_required"] } }, "required": ["delivery"] },
+      "then": { "properties": { "quality_gates": { "properties": { "tiling": { "properties": { "result": { "enum": ["pending", "pass", "fail"] } } } } } } }
+    },
+    {
+      "if": { "properties": { "approval": { "properties": { "status": { "const": "approved" } }, "required": ["status"] } }, "required": ["approval"] },
+      "then": {
+        "properties": {
+          "approval": { "required": ["status", "reviewer", "date", "roblox_asset_id", "registry_path"] },
+          "delivery": { "required": ["artifact_sha256"] },
+          "quality_gates": {
+            "properties": {
+              "originality": { "$ref": "#/$defs/passed" }, "rights": { "$ref": "#/$defs/passed" },
+              "style": { "$ref": "#/$defs/passed" }, "technical": { "$ref": "#/$defs/passed" },
+              "performance": { "$ref": "#/$defs/passed" }, "in_engine": { "$ref": "#/$defs/passed" }
+            }
+          }
+        },
+        "allOf": [{
+          "if": { "properties": { "delivery": { "properties": { "tiling_required": { "const": true } } } } },
+          "then": { "properties": { "quality_gates": { "properties": { "tiling": { "$ref": "#/$defs/passed" } } } } },
+          "else": { "properties": { "quality_gates": { "properties": { "tiling": { "properties": { "result": { "enum": ["not_applicable", "pass"] } } } } } } }
+        }]
+      }
+    }
+  ],
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "slug": { "type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$" },
+    "gate": {
+      "type": "object", "additionalProperties": false, "required": ["result", "evidence"],
+      "properties": {
+        "result": { "enum": ["pending", "pass", "fail", "not_applicable"] },
+        "evidence": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/text" } },
+        "reviewer": { "$ref": "#/$defs/text" }
+      },
+      "if": { "properties": { "result": { "const": "pass" } }, "required": ["result"] },
+      "then": { "required": ["reviewer"], "properties": { "evidence": { "minItems": 1 } } }
+    },
+    "passed": { "properties": { "result": { "const": "pass" } } }
+  }
+}

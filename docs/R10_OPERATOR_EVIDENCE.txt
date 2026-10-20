@@ -1,0 +1,161 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261018144638
+Username: DESKTOP-HOJHA7U\juara
+RunAs User: DESKTOP-HOJHA7U\juara
+Configuration Name: 
+Machine: DESKTOP-HOJHA7U (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 51628
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\docs\R10_OPERATOR_EVIDENCE.txt
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) Get-Date -Format o
+2026-10-18T14:46:38.8672409+08:00
+PS C:\AI\slop\roblox-factory>
+(base) Get-TimeZone | Select-Object Id, BaseUtcOffset
+
+Id                      BaseUtcOffset
+--                      -------------
+Singapore Standard Time 08:00:00
+
+
+PS C:\AI\slop\roblox-factory>
+(base) $ErrorActionPreference = 'Stop'
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) $pkg = 'C:\nvm4w\nodejs\node_modules\opencode-ai\package.json'
+PS C:\AI\slop\roblox-factory>
+(base) $exe = 'C:\nvm4w\nodejs\node_modules\opencode-ai\bin\opencode.exe'
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) # 1. File metadata and SHA-256 hashes
+PS C:\AI\slop\roblox-factory>
+(base) foreach ($path in @($pkg, $exe)) {
+    $item = Get-Item -LiteralPath $path
+
+    [pscustomobject]@{
+        RequestedPath = $path
+        FullName = $item.FullName
+        Length = $item.Length
+        SHA256 = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash
+        LastWriteTimeUtc = $item.LastWriteTimeUtc.ToString('o')
+        LinkType = $item.LinkType
+        Target = $item.Target
+    } | ConvertTo-Json -Depth 5
+}
+{
+    "RequestedPath":  "C:\\nvm4w\\nodejs\\node_modules\\opencode-ai\\package.json",
+    "FullName":  "C:\\nvm4w\\nodejs\\node_modules\\opencode-ai\\package.json",
+    "Length":  812,
+    "SHA256":  "3D8D4CDC137D50237711B9DA187BD190E5B273CFAC25ADFAD31BE5F0EF691BFD",
+    "LastWriteTimeUtc":  "2026-10-16T12:09:24.4788519Z",
+    "LinkType":  null,
+    "Target":  [
+                   "C:\\Users\\juara\\AppData\\Local\\nvm\\v24.11.1\\node_modules\\opencode-ai\\package.json"
+               ]
+}
+{
+    "RequestedPath":  "C:\\nvm4w\\nodejs\\node_modules\\opencode-ai\\bin\\opencode.exe",
+    "FullName":  "C:\\nvm4w\\nodejs\\node_modules\\opencode-ai\\bin\\opencode.exe",
+    "Length":  180714888,
+    "SHA256":  "BB731F311416DF16691FA16763EB87657C4A5F5F3BCFF5202718C416E8F7AB1A",
+    "LastWriteTimeUtc":  "2026-10-16T12:09:25.4534944Z",
+    "LinkType":  "HardLink",
+    "Target":  [
+                   "C:\\Users\\juara\\AppData\\Local\\nvm\\v24.11.1\\node_modules\\opencode-ai\\node_modules\\opencode-windows-x64\\bin\\opencode.exe",
+                   "C:\\Users\\juara\\AppData\\Local\\nvm\\v24.11.1\\node_modules\\opencode-ai\\bin\\opencode.exe"
+               ]
+}
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) # 2. Installed OpenCode package information
+PS C:\AI\slop\roblox-factory>
+(base) $p = Get-Content -LiteralPath $pkg -Raw | ConvertFrom-Json
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) $p | Select-Object name, version, bin, exports, dependencies,
+    optionalDependencies, os, cpu, engines |
+    ConvertTo-Json -Depth 20
+{
+    "name":  "opencode-ai",
+    "version":  "1.19.0",
+    "bin":  {
+                "opencode":  "./bin/opencode.exe"
+            },
+    "exports":  null,
+    "dependencies":  null,
+    "optionalDependencies":  {
+                                 "opencode-linux-x64-musl":  "1.19.0",
+                                 "opencode-linux-arm64":  "1.19.0",
+                                 "opencode-darwin-x64-baseline":  "1.19.0",
+                                 "opencode-windows-arm64":  "1.19.0",
+                                 "opencode-linux-x64-baseline":  "1.19.0",
+                                 "opencode-darwin-arm64":  "1.19.0",
+                                 "opencode-windows-x64":  "1.19.0",
+                                 "opencode-darwin-x64":  "1.19.0",
+                                 "opencode-linux-x64":  "1.19.0",
+                                 "opencode-linux-arm64-musl":  "1.19.0",
+                                 "opencode-windows-x64-baseline":  "1.19.0",
+                                 "opencode-linux-x64-baseline-musl":  "1.19.0"
+                             },
+    "os":  [
+               "darwin",
+               "linux",
+               "win32"
+           ],
+    "cpu":  [
+                "arm64",
+                "x64"
+            ],
+    "engines":  null
+}
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) # 3. Executable version information
+PS C:\AI\slop\roblox-factory>
+(base) $v = (Get-Item -LiteralPath $exe).VersionInfo
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) $v | Select-Object FileName, OriginalFilename, FileVersion,
+    ProductVersion, ProductName, CompanyName |
+    ConvertTo-Json
+{
+    "FileName":  "C:\\nvm4w\\nodejs\\node_modules\\opencode-ai\\bin\\opencode.exe",
+    "OriginalFilename":  "bun.exe",
+    "FileVersion":  "1.3.14",
+    "ProductVersion":  "1.3.14",
+    "ProductName":  "Bun",
+    "CompanyName":  "Oven"
+}
+PS C:\AI\slop\roblox-factory>
+(base) $sig = Get-AuthenticodeSignature -LiteralPath $exe
+PS C:\AI\slop\roblox-factory>
+PS C:\AI\slop\roblox-factory>
+(base) [pscustomobject]@{
+    Status = [string]$sig.Status
+    Signer = $sig.SignerCertificate.Subject
+    SignerThumbprint = $sig.SignerCertificate.Thumbprint
+    TrustQualification = 'Offline Windows trust/cache result only'
+} | ConvertTo-Json
+{
+    "Status":  "Valid",
+    "Signer":  "CN=\"Anomaly Innovations, Inc https://anoma.ly/\", O=\"Anomaly Innovations, Inc https://anoma.ly/\", L=Dover, S=Delaware, C=US",
+    "SignerThumbprint":  "77F28D7AB97A6983B005FCDABD6A25F62EF424D4",
+    "TrustQualification":  "Offline Windows trust/cache result only"
+}
+PS C:\AI\slop\roblox-factory>
+(base) Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261018144942
+**********************

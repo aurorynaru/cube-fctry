@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "atmospheric-survival",
+  "name": "Atmospheric Survival",
+  "genres": ["survival", "environmental suspense"],
+  "audience": "Players who enjoy tension without losing navigational clarity.",
+  "camera": "Third-person close-to-medium camera; hazards must read in low light.",
+  "devices": ["phone", "tablet", "desktop"],
+  "pillars": ["Threat through absence", "Navigable darkness", "Material history"],
+  "identity": "Ridge-cut shelters and wind-scarred slate create a distinct exposed-coast setting.",
+  "palette": {
+    "base": ["#24313B", "#4E6061", "#8F9181"],
+    "accent": ["#B58C62", "#729CA0"],
+    "semantic": { "interactable": "#6EC3C0", "hazard": "#E17860", "reward": "#D8B46D", "neutral": "#A2A99D" },
+    "rule": "Use bright chroma sparingly; never communicate danger by darkness alone."
+  },
+  "geometry": "Broad shelter masses, broken but navigable edges and recognizable supply silhouettes.",
+  "materials": { "surfaces": "Damp slate, rough timber and tarnished utility metal.", "texture_rule": "Uneven weathering at drainage and touch points; maintain value hierarchy.", "tiling_rule": "Ground repeats need seam checks and motif breakup at actual camera height." },
+  "lighting": "Localized pools of practical light with accessible silhouettes and visible exit routes.",
+  "effects": "Windborne flecks and limited fog; avoid masking hazards or degrading phone frame rate.",
+  "ui": "Minimal inventory and strong status icons with text and non-color signals.",
+  "audio": "Wind, shelter creaks and restrained low pulses; urgent warnings cut through ambience.",
+  "budgets": { "target_fps_phone": 30, "max_texture_edge_px": 1024, "max_texture_bytes": 2097152, "reuse_rule": "Reuse shelter modules and weather overlays rather than unique high-resolution surfaces." },
+  "originality": "Use original locations and survival symbols; exclude copied horror mascots, logos and recognizable level layouts."
+}

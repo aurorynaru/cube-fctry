@@ -1,0 +1,48 @@
+{
+  "source": "outputs/generated/b3-stone-paving-0001/b3-stone-paving-0001.png",
+  "source_sha256": "85DFB0578BC0159B450E0F994A9A6BB15976C69CBB5B9C1D5EA0DCB73B12E6C3",
+  "generic_derivative": "outputs/generated/b3-stone-paving-0001/b3-stone-paving-0001-seamless.png",
+  "generic_sha256": "4C58C683605B321266FABC0C5DEE927CCBE7BC36BFA0C37FE645A870477EDCC5",
+  "dimensions": [
+    1024,
+    1024
+  ],
+  "strategy_a": {
+    "name": "grout-routed border graft",
+    "candidate": "stone-paving-b4-grout-graft.png",
+    "sha256": "5D40DCC272D9242F72487F926EE2A3822028F3731923CF16FDAAC7AF8FBB55EC",
+    "settings": {
+      "stone_pair_cost": "1 + 20000*stone^2",
+      "ring_band_ramp": [
+        16,
+        88
+      ],
+      "ring_band_floor": 12,
+      "ring_band_ceiling": 120,
+      "corner_unary": 8.0
+    },
+    "border_band_share": 0.23,
+    "top_bottom_pixels": 105002,
+    "left_right_pixels": 104977,
+    "corner_pixels": 31172,
+    "note": "Source-specific corner guards; min-cut may cross narrow grout or stone at depth."
+  },
+  "strategy_b": {
+    "name": "directional edge taper",
+    "candidate": "stone-paving-b4-edge-taper.png",
+    "sha256": "A104510790973C0C8F0DB92B54D78BD0D9C59A534D8CD6A4D3648003AD7C78E3",
+    "settings": {
+      "taper_px": 24.0,
+      "profile": "cosine",
+      "interior": "unchanged outside the border band",
+      "target": "rolled copy at offset_y/offset_x for top/bottom or left/right, combined offset at corners"
+    },
+    "taper_px": 24.0,
+    "offset_y": 229,
+    "offset_x": 93
+  },
+  "comparison": "stone-paving-b4-comparison.png",
+  "finalists_5x5": "stone-paving-b4-finalists-5x5.png",
+  "b2_evidence_command": "python tool/validate_texture.py outputs/b4-stone-correction/stone-paving-b4-grout-graft.png outputs/b4-stone-correction/stone-paving-b4-edge-taper.png --profile adventure-fantasy --seamless --out-dir registry/evidence/texture-qa-b4",
+  "note": "B2 reports are authoritative; this JSON records construction only."
+}

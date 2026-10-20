@@ -1,0 +1,183 @@
+{
+  "validator_version": "B2-1.2",
+  "source": "outputs/b4-stone-correction/stone-paving-b4-edge-taper.png",
+  "source_sha256": "a104510790973c0c8f0db92b54d78bd0d9c59a534d8cd6a4d3648003ad7c78e3",
+  "profile": {
+    "id": "adventure-fantasy",
+    "path": "art/presets/adventure-fantasy.json",
+    "schema_version": "1.0",
+    "sha256": "8b5389b494d503aada07cd982d9189c5caf33a247da3317ec7f2080daa9910cd"
+  },
+  "checks": {
+    "style_profile": {
+      "result": "PASS",
+      "detail": "Unique v1.0 profile resolves and validates via B1"
+    },
+    "asset_metadata": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "No B1 request supplied; provenance, usage and delivery intent unverified"
+    },
+    "file": {
+      "result": "PASS",
+      "detail": "Existing file: 2048603 bytes"
+    },
+    "sha256": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "actual=a104510790973c0c8f0db92b54d78bd0d9c59a534d8cd6a4d3648003ad7c78e3; expected=not supplied"
+    },
+    "readability": {
+      "result": "PASS",
+      "detail": "Full image decoded successfully"
+    },
+    "pixel_mode": {
+      "result": "PASS",
+      "detail": "RGB opaque"
+    },
+    "transparency": {
+      "result": "PASS",
+      "detail": "Opaque"
+    },
+    "delivery": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "No validated request dimensions/format"
+    },
+    "texture_budget": {
+      "result": "PASS",
+      "detail": "edge=1024/1024 px; file=2048603/2097152 bytes"
+    },
+    "style_proxy": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "stylized detail and legible material features; screening limits residual_std=24.0, broad_std=12.0; no proxy alert"
+    },
+    "edge_screen": {
+      "result": "PASS",
+      "detail": "right-left/neighbor=0.715, bottom-top/neighbor=0.759; proposed max=1.25"
+    },
+    "tone_screen": {
+      "result": "PASS",
+      "detail": "8px-blurred edge means=3.931, 5.001; screening max=8"
+    },
+    "repeated_motif_screen": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "broad_std=10.061, p99_deviation=34.604; potential repeated landmark; inspect 5x5"
+    }
+  },
+  "metrics": {
+    "file_bytes": 2048603,
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "decoded_bytes_estimate": 3145728,
+    "rgba_runtime_bytes_estimate": 4194304,
+    "budget": {
+      "target_fps_phone": 30,
+      "max_texture_edge_px": 1024,
+      "max_texture_bytes": 2097152,
+      "reuse_rule": "Build landmark kits from reusable arches, ribs and stone trims with limited variants."
+    },
+    "style_proxies": {
+      "high_frequency_residual_std": 12.356,
+      "broad_tone_std": 10.061,
+      "broad_tone_p99_deviation": 34.604
+    },
+    "raw_edges": {
+      "vertical_edge_mean": 5.576,
+      "horizontal_edge_mean": 6.625,
+      "ordinary_x_mean": 7.798,
+      "ordinary_y_mean": 8.727,
+      "vertical_ratio": 0.715,
+      "horizontal_ratio": 0.759
+    },
+    "blurred_radius_8_edges": {
+      "vertical_edge_mean": 3.931,
+      "horizontal_edge_mean": 5.001,
+      "ordinary_x_mean": 0.731,
+      "ordinary_y_mean": 0.832,
+      "vertical_ratio": 5.378,
+      "horizontal_ratio": 6.011
+    },
+    "preview_dimensions": {
+      "3x3": [
+        3072,
+        3072
+      ],
+      "5x5": [
+        1280,
+        1280
+      ],
+      "seam_detail": [
+        512,
+        512
+      ]
+    },
+    "preview_policy": "3x3 native up to 1024x1024 source; otherwise each tile downscaled to <=256x256. 5x5 downscaled to <=256x256 per tile; seam detail native-pixel crop."
+  },
+  "assessments": {
+    "style_compliance": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "Material, silhouette, palette and genre judgment require a human at intended scale"
+    },
+    "in_engine_suitability": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "UV, filtering, compression, lighting and target device untested"
+    },
+    "mathematical_continuity": {
+      "result": "FAIL",
+      "detail": "Exact equality of opposing RGB edge pixels on both axes"
+    },
+    "visual_seamlessness": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "Inspect both grids and center joins; numerical screens do not establish visual acceptability"
+    },
+    "repetition_quality": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "Inspect distinctive repeated motifs in 5x5 at use scale"
+    }
+  },
+  "evidence": {
+    "json": "registry/evidence/texture-qa-b4/stone-paving-b4-edge-taper-3db0e4578e44-a10451079097.json",
+    "markdown": "registry/evidence/texture-qa-b4/stone-paving-b4-edge-taper-3db0e4578e44-a10451079097.md",
+    "3x3": "registry/evidence/texture-qa-b4/stone-paving-b4-edge-taper-3db0e4578e44-a10451079097-3x3.png",
+    "5x5": "registry/evidence/texture-qa-b4/stone-paving-b4-edge-taper-3db0e4578e44-a10451079097-5x5.png",
+    "seam_detail": "registry/evidence/texture-qa-b4/stone-paving-b4-edge-taper-3db0e4578e44-a10451079097-seam_detail.png"
+  },
+  "registry_gate_claims": {
+    "originality": {
+      "result": "pending",
+      "evidence": []
+    },
+    "rights": {
+      "result": "pending",
+      "evidence": []
+    },
+    "style": {
+      "result": "pending",
+      "evidence": []
+    },
+    "technical": {
+      "result": "pending",
+      "evidence": []
+    },
+    "performance": {
+      "result": "pending",
+      "evidence": []
+    },
+    "tiling": {
+      "result": "pending",
+      "evidence": []
+    },
+    "in_engine": {
+      "result": "pending",
+      "evidence": []
+    }
+  },
+  "automated_result": "REVIEW_REQUIRED",
+  "overall_result": "REVIEW_REQUIRED"
+}

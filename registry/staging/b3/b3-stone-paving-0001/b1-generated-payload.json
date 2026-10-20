@@ -1,0 +1,8 @@
+{
+  "path": "outputs/generated/b3-stone-paving-0001/b3-stone-paving-0001.png",
+  "sha256": "85dfb0578bc0159b450e0f994a9a6bb15976c69cbb5b9c1d5ea0dcb73b12e6c3",
+  "size_bytes": 2050632,
+  "workflow_path": "workflows/generated/b3-stone-paving-0001/workflow.json",
+  "workflow_sha256": "626e478c05d0a38b2ba86678b08ddf2abf57099169be26daaeab5d953896da0d",
+  "note": "Prospective B1 generated payload only; not recorded. Requires separate authorization."
+}

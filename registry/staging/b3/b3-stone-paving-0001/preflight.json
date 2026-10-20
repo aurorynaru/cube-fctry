@@ -1,0 +1,128 @@
+{
+  "available": true,
+  "server_url": "http://127.0.0.1:8188",
+  "comfyui_version": "0.41.0",
+  "system": {
+    "os": "win32",
+    "ram_total": 33946488832,
+    "ram_free": 6951378944,
+    "comfyui_version": "0.41.0",
+    "required_frontend_version": "1.55.17",
+    "installed_templates_version": "0.11.84",
+    "required_templates_version": "0.11.84",
+    "comfy_package_versions": [
+      {
+        "name": "comfyui-frontend-package",
+        "installed": "1.55.17",
+        "required": "1.55.17"
+      },
+      {
+        "name": "comfyui-workflow-templates",
+        "installed": "0.11.84",
+        "required": "0.11.84"
+      },
+      {
+        "name": "comfyui-embedded-docs",
+        "installed": "0.5.14",
+        "required": "0.5.14"
+      },
+      {
+        "name": "comfy-kitchen",
+        "installed": "0.2.37",
+        "required": "0.2.37"
+      },
+      {
+        "name": "comfy-aimdo",
+        "installed": "0.5.6",
+        "required": "0.5.6"
+      }
+    ],
+    "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "pytorch_version": "2.14.0+cu130",
+    "embedded_python": true,
+    "deploy_environment": "local-portable",
+    "argv": [
+      "ComfyUI\\main.py",
+      "--windows-standalone-build"
+    ]
+  },
+  "devices": [
+    {
+      "name": "cuda:0 NVIDIA GeForce RTX 3090 : cudaMallocAsync",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 25769279488,
+      "vram_free": 24355930112,
+      "torch_vram_total": 33554432,
+      "torch_vram_free": 24772608
+    }
+  ],
+  "object_info_nodes": 1446,
+  "workflow_checks": {
+    "checked_nodes": 9,
+    "allowed_classes": [
+      "CLIPLoader",
+      "CLIPTextEncode",
+      "EmptyFlux2LatentImage",
+      "KSampler",
+      "SaveImage",
+      "UNETLoader",
+      "VAEDecode",
+      "VAELoader"
+    ],
+    "models": {
+      "unet": "flux3_image_klein_sd_int8_convrot.safetensors",
+      "clip": "qwen3vl_4b_int8_convrot.safetensors",
+      "vae": "flux2-vae.safetensors",
+      "clip_type": "flux3"
+    },
+    "api_nodes_rejected": 0,
+    "node_checks": [
+      {
+        "node_id": "1",
+        "class_type": "UNETLoader",
+        "api_node": false
+      },
+      {
+        "node_id": "2",
+        "class_type": "CLIPLoader",
+        "api_node": false
+      },
+      {
+        "node_id": "3",
+        "class_type": "VAELoader",
+        "api_node": false
+      },
+      {
+        "node_id": "4",
+        "class_type": "CLIPTextEncode",
+        "api_node": false
+      },
+      {
+        "node_id": "5",
+        "class_type": "CLIPTextEncode",
+        "api_node": false
+      },
+      {
+        "node_id": "6",
+        "class_type": "EmptyFlux2LatentImage",
+        "api_node": false
+      },
+      {
+        "node_id": "7",
+        "class_type": "KSampler",
+        "api_node": false
+      },
+      {
+        "node_id": "8",
+        "class_type": "VAEDecode",
+        "api_node": false
+      },
+      {
+        "node_id": "9",
+        "class_type": "SaveImage",
+        "api_node": false
+      }
+    ]
+  }
+}

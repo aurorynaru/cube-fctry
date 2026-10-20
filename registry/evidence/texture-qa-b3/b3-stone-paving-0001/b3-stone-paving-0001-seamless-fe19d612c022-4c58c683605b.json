@@ -1,0 +1,183 @@
+{
+  "validator_version": "B2-1.2",
+  "source": "outputs/generated/b3-stone-paving-0001/b3-stone-paving-0001-seamless.png",
+  "source_sha256": "4c58c683605b321266fabc0c5dee927ccbe7bc36bfa0c37fe645a870477edcc5",
+  "profile": {
+    "id": "adventure-fantasy",
+    "path": "art/presets/adventure-fantasy.json",
+    "schema_version": "1.0",
+    "sha256": "8b5389b494d503aada07cd982d9189c5caf33a247da3317ec7f2080daa9910cd"
+  },
+  "checks": {
+    "style_profile": {
+      "result": "PASS",
+      "detail": "Unique v1.0 profile resolves and validates via B1"
+    },
+    "asset_metadata": {
+      "result": "PASS",
+      "detail": "B1 v1.0 request structure and pending-gate intent validated; content still needs human verification"
+    },
+    "file": {
+      "result": "PASS",
+      "detail": "Existing file: 1703082 bytes"
+    },
+    "sha256": {
+      "result": "PASS",
+      "detail": "actual=4c58c683605b321266fabc0c5dee927ccbe7bc36bfa0c37fe645a870477edcc5; expected=4c58c683605b321266fabc0c5dee927ccbe7bc36bfa0c37fe645a870477edcc5"
+    },
+    "readability": {
+      "result": "PASS",
+      "detail": "Full image decoded successfully"
+    },
+    "pixel_mode": {
+      "result": "PASS",
+      "detail": "RGB opaque"
+    },
+    "transparency": {
+      "result": "PASS",
+      "detail": "Opaque"
+    },
+    "delivery": {
+      "result": "PASS",
+      "detail": "actual=1024x1024 png; requested=1024x1024 png"
+    },
+    "texture_budget": {
+      "result": "PASS",
+      "detail": "edge=1024/1024 px; file=1703082/2097152 bytes"
+    },
+    "style_proxy": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "stylized detail and legible material features; screening limits residual_std=24.0, broad_std=12.0; no proxy alert"
+    },
+    "edge_screen": {
+      "result": "PASS",
+      "detail": "right-left/neighbor=0.935, bottom-top/neighbor=0.934; proposed max=1.25"
+    },
+    "tone_screen": {
+      "result": "FAIL",
+      "detail": "8px-blurred edge means=8.016, 7.865; screening max=8"
+    },
+    "repeated_motif_screen": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "broad_std=8.951, p99_deviation=28.956; potential repeated landmark; inspect 5x5"
+    }
+  },
+  "metrics": {
+    "file_bytes": 1703082,
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "decoded_bytes_estimate": 3145728,
+    "rgba_runtime_bytes_estimate": 4194304,
+    "budget": {
+      "target_fps_phone": 30,
+      "max_texture_edge_px": 1024,
+      "max_texture_bytes": 2097152,
+      "reuse_rule": "Build landmark kits from reusable arches, ribs and stone trims with limited variants."
+    },
+    "style_proxies": {
+      "high_frequency_residual_std": 11.48,
+      "broad_tone_std": 8.951,
+      "broad_tone_p99_deviation": 28.956
+    },
+    "raw_edges": {
+      "vertical_edge_mean": 6.816,
+      "horizontal_edge_mean": 7.595,
+      "ordinary_x_mean": 7.292,
+      "ordinary_y_mean": 8.132,
+      "vertical_ratio": 0.935,
+      "horizontal_ratio": 0.934
+    },
+    "blurred_radius_8_edges": {
+      "vertical_edge_mean": 8.016,
+      "horizontal_edge_mean": 7.865,
+      "ordinary_x_mean": 0.71,
+      "ordinary_y_mean": 0.772,
+      "vertical_ratio": 11.29,
+      "horizontal_ratio": 10.188
+    },
+    "preview_dimensions": {
+      "3x3": [
+        3072,
+        3072
+      ],
+      "5x5": [
+        1280,
+        1280
+      ],
+      "seam_detail": [
+        512,
+        512
+      ]
+    },
+    "preview_policy": "3x3 native up to 1024x1024 source; otherwise each tile downscaled to <=256x256. 5x5 downscaled to <=256x256 per tile; seam detail native-pixel crop."
+  },
+  "assessments": {
+    "style_compliance": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "Material, silhouette, palette and genre judgment require a human at intended scale"
+    },
+    "in_engine_suitability": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "UV, filtering, compression, lighting and target device untested"
+    },
+    "mathematical_continuity": {
+      "result": "FAIL",
+      "detail": "Exact equality of opposing RGB edge pixels on both axes"
+    },
+    "visual_seamlessness": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "Inspect both grids and center joins; numerical screens do not establish visual acceptability"
+    },
+    "repetition_quality": {
+      "result": "REVIEW_REQUIRED",
+      "detail": "Inspect distinctive repeated motifs in 5x5 at use scale"
+    }
+  },
+  "evidence": {
+    "json": "registry/evidence/texture-qa-b3/b3-stone-paving-0001/b3-stone-paving-0001-seamless-fe19d612c022-4c58c683605b.json",
+    "markdown": "registry/evidence/texture-qa-b3/b3-stone-paving-0001/b3-stone-paving-0001-seamless-fe19d612c022-4c58c683605b.md",
+    "3x3": "registry/evidence/texture-qa-b3/b3-stone-paving-0001/b3-stone-paving-0001-seamless-fe19d612c022-4c58c683605b-3x3.png",
+    "5x5": "registry/evidence/texture-qa-b3/b3-stone-paving-0001/b3-stone-paving-0001-seamless-fe19d612c022-4c58c683605b-5x5.png",
+    "seam_detail": "registry/evidence/texture-qa-b3/b3-stone-paving-0001/b3-stone-paving-0001-seamless-fe19d612c022-4c58c683605b-seam_detail.png"
+  },
+  "registry_gate_claims": {
+    "originality": {
+      "result": "pending",
+      "evidence": []
+    },
+    "rights": {
+      "result": "pending",
+      "evidence": []
+    },
+    "style": {
+      "result": "pending",
+      "evidence": []
+    },
+    "technical": {
+      "result": "pending",
+      "evidence": []
+    },
+    "performance": {
+      "result": "pending",
+      "evidence": []
+    },
+    "tiling": {
+      "result": "pending",
+      "evidence": []
+    },
+    "in_engine": {
+      "result": "pending",
+      "evidence": []
+    }
+  },
+  "automated_result": "FAIL",
+  "overall_result": "FAIL"
+}
